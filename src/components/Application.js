@@ -22,7 +22,7 @@ const days = [
 ];
 
 export default function Application(props) {
-  const[dayclick, setDay] = useState('Tuesday')
+  const[dayclick, setDay] = useState('Monday')
   return (
     <main className="layout">
       <section className="sidebar">

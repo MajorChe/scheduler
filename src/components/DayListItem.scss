@@ -1,48 +1,28 @@
-@import "../styles/mixins.scss";
-@import "../styles/variables.scss";
-
+@import "styles/mixins.scss";
+@import "styles/variables.scss";
 .day-list {
   &__item {
     @include fade;
-
-    color: #8395a7;
+    color: #8395A7;
     height: 5rem;
+    padding-left: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2rem;
-
     &:hover {
-      background-color: #ee5253;
+      background-color: #EE5253;
       cursor: pointer;
       color: $dark-background;
     }
-
     &--selected {
-      height: 5rem;
       background-color: darken($white, 5%);
       color: $dark-background;
-      padding: 2rem;
       &:hover {
         background-color: darken($white, 5%);
       }
     }
-
     &--full {
-      height: 5rem;
-      padding: 2rem;
-      &:hover {
-        background-color: #ee5253;
-        cursor: pointer;
-        color: $dark-background;
-        opacity: 0.15;
-      }
-    }
-    &--selected--full {
-        height: 5rem;
-        padding: 2rem;
-          background-color: #1d1a1a;
-          color: rgb(70, 67, 63);
+      opacity: $inactive-opacity;
     }
   }
 }
