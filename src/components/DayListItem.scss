@@ -7,10 +7,10 @@
 
     color: #8395a7;
     height: 5rem;
-    padding-left: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 2rem;
 
     &:hover {
       background-color: #ee5253;
@@ -19,17 +19,30 @@
     }
 
     &--selected {
+      height: 5rem;
       background-color: darken($white, 5%);
       color: $dark-background;
-
+      padding: 2rem;
       &:hover {
         background-color: darken($white, 5%);
       }
     }
 
     &--full {
-      color: greenyellow;
-      opacity: $inactive-opacity;
+      height: 5rem;
+      padding: 2rem;
+      &:hover {
+        background-color: #ee5253;
+        cursor: pointer;
+        color: $dark-background;
+        opacity: 0.15;
+      }
+    }
+    &--selected--full {
+        height: 5rem;
+        padding: 2rem;
+          background-color: #1d1a1a;
+          color: rgb(70, 67, 63);
     }
   }
 }
