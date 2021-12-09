@@ -3,9 +3,47 @@ import DayList from "./DayList";
 import InterviewerList from "./InterviewerList";
 import "components/Application.scss";
 import { useState } from "react";
-import Header from "./Appointment/Header";
-import Show from "./Appointment/Show";
-import Empty from "./Appointment/Empty";
+import "./Appointment"
+import Appointment from "./Appointment";
+
+const appointments = [
+  {
+    id: 1,
+    time: "12pm",
+  },
+  {
+    id: 2,
+    time: "1pm",
+    interview: {
+      student: "Lydia Miller-Jones",
+      interviewer:{
+        id: 3,
+        name: "Sylvia Palmer",
+        avatar: "https://i.imgur.com/LpaY82x.png",
+      }
+    }
+  },
+  {
+    id: 3,
+    time: "2pm",
+  },
+  {
+    id: 4,
+    time: "3pm",
+    interview: {
+      student: "Archie Andrews",
+      interviewer:{
+        id: 4,
+        name: "Cohana Roy",
+        avatar: "https://i.imgur.com/FK8V841.jpg",
+      }
+    }
+  },
+  {
+    id: 5,
+    time: "4pm",
+  }
+];
 
 const days = [
   {
@@ -25,16 +63,11 @@ const days = [
   },
 ];
 
-const interviewers = [
-  { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
-  { id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
-  { id: 3, name: "Mildred Nazir", avatar: "https://i.imgur.com/T2WwVfS.png" },
-  { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
-  { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
-];
-
 export default function Application(props) {
   const[dayclick, setDay] = useState('Monday')
+  const appointmentlist = appointments.map((appointment) => {
+    return <Appointment key = {appointment.id} {... appointment}/>
+  })
   return (
     <main className="layout">
       <section className="sidebar">
@@ -55,7 +88,7 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
-        
+        {appointmentlist}
       </section>
     </main>
   );
