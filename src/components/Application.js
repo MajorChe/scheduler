@@ -42,7 +42,7 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          <DayList days= {days} day={dayclick} setDay={day => setDay(day)} />
+          <DayList days= {days} value={dayclick} onChange={day => setDay(day)} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
