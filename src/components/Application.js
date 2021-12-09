@@ -1,8 +1,11 @@
-import React from "react";
+import React, {Fragment} from "react";
 import DayList from "./DayList";
 import InterviewerList from "./InterviewerList";
 import "components/Application.scss";
 import { useState } from "react";
+import Header from "./Appointment/Header";
+import Show from "./Appointment/Show";
+import Empty from "./Appointment/Empty";
 
 const days = [
   {
@@ -52,7 +55,7 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
-        <InterviewerList interviewers= {interviewers}/>
+        
       </section>
     </main>
   );
