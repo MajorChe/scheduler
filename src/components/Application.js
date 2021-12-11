@@ -54,7 +54,15 @@ export default function Application(props) {
     axios.get('http://localhost:8001/api/days')
     .then(response => setDays(response.data))
   },[])
-  
+
+  // const getAppointmentsForDay = (state,day) => {
+  //  const getItem = state.filter(item => item.name === day)
+  //  const getAppoint = getItem.filter(item => item)
+  //  return getAppoint
+  // }
+
+  // console.log(getAppointmentsForDay(days,"Monday"))
+
   const appointmentlist = appointments.map((appointment) => {
     return <Appointment key = {appointment.id} {... appointment}/>
   })
