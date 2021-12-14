@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import DayList from "./DayList";
-import InterviewerList from "./InterviewerList";
 import "components/Application.scss";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -10,15 +9,30 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay} from "helpe
 
 
 export default function Application(props) {
-
-  const setDay = day => setState({...state,day});
-
+  
   const [state, setState] = useState({
     day : "Monday",
     days : [],
     appointments : {},
     interviewers : {}
   })
+
+  const bookInterview = (id,interview) => {
+
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    setState({... state, appointments});
+  }
+  
+  const setDay = day => setState({...state,day});
 
   useEffect(()=> {
     Promise.all([
@@ -39,7 +53,9 @@ export default function Application(props) {
     return <Appointment
     key = {appointment.id} {... appointment}
     interview = {interview}
-    interviewers = {dailyInterviewers}/>
+    interviewers = {dailyInterviewers}
+    bookInterview = {bookInterview}
+    />
   })
 
   return (
