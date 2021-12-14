@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Form(props) {
   const [student,setStudent] = useState(props.student || "");
-  const [Interviewer, setInterviewer] = useState(props.interviewer || null);
+  const [interviewer, setInterviewer] = useState(props.interviewer || null);
   function reset () {
     setStudent('');
     setInterviewer(null)
@@ -16,7 +16,7 @@ export default function Form(props) {
     reset()
   }
   const save = ()=> {
-    props.onSave(student,Interviewer)
+    props.onSave(student,interviewer)
   }
   
   return (
@@ -36,7 +36,7 @@ export default function Form(props) {
         {/* Interviewer is selcted using the interviewer component */}
         <InterviewerList
         interviewers = {props.interviewers}
-        value = {Interviewer}
+        value = {interviewer}
         onChange = {setInterviewer}
         />
       </section>

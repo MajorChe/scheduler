@@ -7,7 +7,7 @@ export default function useVisualMode(initial) {
     if (replace === true) {
       setMode(item)
     }
-    if (item != mode && replace === false) { //if first === second
+    if (item !== mode && replace === false) { //if first === second
       setMode(item); //second
       setHistory([...history, item]); // first second
     }
