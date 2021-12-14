@@ -10,7 +10,7 @@ export default function useVisualMode(initial) {
     if (item !== mode && replace === false) { //if first === second
       setMode(item); //second
       // setHistory([...history, item]); // first second
-      setHistory(prev => ([...prev, mode])) 
+      setHistory(prev => ([...prev, item])) 
     }
   };
   const back = () => {

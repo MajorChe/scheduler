@@ -6,7 +6,7 @@ export function getAppointmentsForDay(state, day) {
   const arr = [];
  for(let i of getappointments[0].appointments) {
       arr.push(state.appointments[i])  //take an appointment id from get appintments and fetch appointments corresponding to that id
-     }
+    }
  return arr;
 }
 
@@ -25,7 +25,7 @@ export function getInterviewersForDay(state, day) {
   }
   const arr = [];
  for(let i of getInterviewers[0].interviewers) {
-      arr.push(state.interviewers[i])  
+      arr.push(state.interviewers[i])
      }
  return arr;
 }
