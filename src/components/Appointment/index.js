@@ -25,10 +25,14 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
+    if (interview.student === '' || interview.interviewer === null) {
+      return transition(ERROR_SAVE,true)
+    }
     transition(SAVING);
+
     props.bookInterview (props.id,interview)
     .then(()=> transition(SHOW))
-    .catch(() => transition(ERROR_SAVE))
+    .catch(() => transition(ERROR_SAVE,true))
   };
 
   const edit = () => {
@@ -43,7 +47,7 @@ export default function Appointment(props) {
     transition(DELETE)
     props.deleteInterview(props.id)
     .then(() => transition(EMPTY))
-    .catch(() => transition(ERROR_SAVE))
+    .catch(() => transition(ERROR_DELETE,true))
   }
 
   return (
