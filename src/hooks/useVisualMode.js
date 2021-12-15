@@ -9,14 +9,8 @@ export default function useVisualMode(initial) {
     }
     if (item !== mode && replace === false) { //if first === second
       setMode(item); //second
-      //console.log(mode)
-      //console.log("history before",history)
-      //console.log(item)
-      // setHistory([...history, item]); // first second
       setHistory(prev => {
-        //console.log("prev",prev)
-        return ([...prev, item])}) // ([...prev,item])
-      //console.log("history after",history)
+        return ([...prev, item])}) 
     }
   };
   const back = () => {
