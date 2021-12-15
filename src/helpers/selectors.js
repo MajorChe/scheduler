@@ -29,3 +29,22 @@ export function getInterviewersForDay(state, day) {
      }
  return arr;
 }
+
+export function getAvailableSpots(appointments,days,day) {
+  const getappointmentslist = days.filter(item => item.name === day);
+
+  let appointmentList = [];
+
+  for (const i of getappointmentslist[0].appointments) {
+    appointmentList.push(appointments[i]);
+  }
+
+  let availableSpots = 0;
+
+  for (const i of appointmentList) {
+    if(!i.interview) {
+      availableSpots++;
+    }
+  }
+  return availableSpots;
+}

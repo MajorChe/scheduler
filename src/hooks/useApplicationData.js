@@ -1,6 +1,6 @@
 import { useState, useEffect} from "react";
 import axios from "axios";
-
+import { getAvailableSpots } from "helpers/selectors";
 export default function useApplicationData () {
   const [state, setState] = useState({
     day : "Monday",
@@ -34,13 +34,54 @@ export default function useApplicationData () {
       [id]: appointment
     };
 
+    const availableSpots = getAvailableSpots(appointments,state.days,state.day)
+
+    const day_id=state.days.findIndex(item=>item.name===state.day);
+
+    const dayObj = {
+      ...state.days[day_id],
+      spots: availableSpots
+    }
+
+    const days = [
+      ...state.days
+    ]
+
+    days[day_id] = dayObj
+
     return axios.put(`/api/appointments/${id}`, appointment)
-          .then(() => setState({...state, appointments}))
+          .then(() => setState({...state, appointments, days}))
   };
 
   const deleteInterview = (id) => {
-    return axios.delete(`/api/appointments/${id}`)
-  }
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    const availableSpots = getAvailableSpots(appointments,state.days,state.day)
+
+    const day_id=state.days.findIndex(item=>item.name===state.day);
+
+    const dayObj = {
+      ...state.days[day_id],
+      spots: availableSpots
+    }
+
+    const days = [
+      ...state.days
+    ]
+
+    days[day_id] = dayObj
+
+    return axios.delete(`/api/appointments/${id}`, appointment)
+    .then(()=> setState({...state,appointments,days}))
+  };
 
   return {state, setDay, bookInterview, deleteInterview}
 }
