@@ -6,6 +6,7 @@ import {
   getByPlaceholderText,
   getByTestId,
   fireEvent,
+  getByText,
 } from "@testing-library/react";
 
 describe("Form", () => {
@@ -54,5 +55,24 @@ describe("Form", () => {
     expect(queryByText(/student name cannot be blank/i)).toBeNull();
     expect(onSave).toHaveBeenCalledTimes(1);
     expect(onSave).toHaveBeenCalledWith("Lydia Miller-Jones", null);
+  });
+
+  it("submits the name entered by the user", () => {
+    const onSave = jest.fn();
+    const {getByText, getByPlaceholderText} = render(<Form interviewers = {interviewers} onSave = {onSave} student = "Name toBe Changed"/>);
+    const input = getByPlaceholderText("Enter Student Name");
+
+    fireEvent.change(input,{target: {value : "MajorChe"}});
+    fireEvent.click(getByText("Save"));
+
+    expect(onSave).toHaveBeenCalledTimes(1);
+    expect(onSave).toHaveBeenCalledWith("MajorChe",null)
+  })
+
+  it("resets the form when clicked cancel", () => {
+    const onCancel = jest.fn();
+    const {getByText} = render(<Form interviewers = {interviewers} onCancel = {onCancel}/>);
+    fireEvent.click(getByText("Cancel"));
+    expect(onCancel).toHaveBeenCalled();
   });
 });
