@@ -42,22 +42,22 @@ For this app to run properly, setup the database and run the API Server and Clie
 - [http://localhost:8000/](http://localhost:8000/)
 
 
-<img src="https://github.com/MajorChe/scheduler/blob/main/public/docs/layout.png"
+<img src="https://github.com/MajorChe/scheduler/blob/master/public/docs/layout.png"
      alt="Layout"
      width=90%;/>
 
 
-<img src="https://github.com/MajorChe/scheduler/blob/main/public/docs/delete.png"
+<img src="https://github.com/MajorChe/scheduler/blob/master/public/docs/delete.png"
      alt="Delete Message"
      width=90%;/>
 
 
 
-<img src="https://github.com/MajorChe/scheduler/blob/main/public/docs/create.png"
+<img src="https://github.com/MajorChe/scheduler/blob/master/public/docs/create.png"
      alt="Edit Phone"
      width=90%;/>             
      
-<img src="https://github.com/MajorChe/scheduler/blob/main/public/docs/mobile.png"
+<img src="https://github.com/MajorChe/scheduler/blob/master/public/docs/mobile.png"
      alt="Phone View"
      width=90%;/>
 
