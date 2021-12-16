@@ -2,7 +2,7 @@
 
 <img src="https://github.com/MajorChe/scheduler/blob/master/public/docs/layout.png"
      alt="Layout"
-     width=90%;/>
+     width=120%;/>
 
 ## Project Description
 Interview Scheduler is a Single Page App that allows Lighthouse Labs Students to book, edit, and track interviews with mentors. The app uses React hooks to allow users to add, edit, and delete interviews in real time. Student, interviewer, and interview data is persisted to the API server using a PorsgreSQL database. The client app sends requests to the API server through HTTP in JSON. Cypress and Jest unit, end-to-end, and integration tests were used to catch errors and test user-stories.
