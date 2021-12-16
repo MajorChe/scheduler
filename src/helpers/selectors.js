@@ -5,7 +5,8 @@ export function getAppointmentsForDay(state, day) {
   }
   const arr = [];
  for(let i of getappointments[0].appointments) {
-      arr.push(state.appointments[i])  //take an appointment id from get appintments and fetch appointments corresponding to that id
+   //take an appointment id from get appintments and fetch appointments corresponding to that id
+      arr.push(state.appointments[i])  
     }
  return arr;
 }

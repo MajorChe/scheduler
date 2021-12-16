@@ -25,9 +25,6 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
-    // if (interview.student === '' || interview.interviewer === null) {
-    //   return transition(ERROR_SAVE,true);
-    // }
     transition(SAVING);
 
     props.bookInterview (props.id,interview)

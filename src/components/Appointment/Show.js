@@ -3,10 +3,10 @@ import React from "react";
 export default function Show(props) {
   const remove = () => {
     props.onDelete();
-  }
+  };
   const edit = () => {
     props.onEdit();
-  }
+  };
   return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">
@@ -22,13 +22,13 @@ export default function Show(props) {
             className="appointment__actions-button"
             src="images/edit.png"
             alt="Edit"
-            onClick = {edit}
+            onClick={edit}
           />
           <img
             className="appointment__actions-button"
             src="images/trash.png"
             alt="Delete"
-            onClick = {remove}
+            onClick={remove}
           />
         </section>
       </section>
