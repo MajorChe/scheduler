@@ -39,10 +39,10 @@ npm run storybook
 For this app to run properly, setup the database and run the API Server and Client simultaniously. 
 - fork and clone [ServerAPI](https://github.com/lighthouse-labs/scheduler-api)
 - Follow the steps in README instructions
-- Fork and clone .this SchedulerV2 repository
+- Fork and clone .this scheduler repository
 - ```npm install``` in root directory
 - run ```npm start``` in scheduler_API
-- run ```npm start``` in schedulerV2
+- run ```npm start``` in scheduler
 - [http://localhost:8000/](http://localhost:8000/)
 
 
